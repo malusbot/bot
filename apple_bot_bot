@@ -17,7 +17,7 @@ class EasyBotter
 
     // タイムラインから拾うツイートをマルコフ連鎖用に選別する関数
  function _mCheckTimeline($tl) {
-  return $tl;
+  return $tl;}
 
         $tl_ = array();
         foreach ($tl as $tweet) {

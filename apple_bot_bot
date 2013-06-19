@@ -16,8 +16,13 @@ class EasyBotter
 
 
     // タイムラインから拾うツイートをマルコフ連鎖用に選別する関数
+ function _mEscape($text) {
+  return $text;
+}
+
  function _mCheckTimeline($tl) {
   return $tl;
+
         $tl_ = array();
         foreach ($tl as $tweet) {
             $tweet['source'] = preg_replace('/<[^>]+>/', '', $tweet['source']);
@@ -215,9 +220,8 @@ $status .= "ンンンィイ゛イ゛ェエ゛エ゛ァア゛ッッッッッポ�
             }
 
             // エスケープ
-            function _mEscape($text) {
-  return $text;
-}
+			$tweet = $this->_mEscape($tweet);
+            
             // 単語ごとに切る
             $tweets[] = $this->_mWakati($tweet);
         }

@@ -1,0 +1,15 @@
+            if ($status){ $status = "@{$reply['user']['screen_name']} {$status}{$this->_footer}";
+$status .= "ぷちぷち";}
+                      // パターンにマッチしない場合はマルコフ
+            else {
+                // キャッシュしたテーブルがない場合
+                if (!$this->_mtable) {
+                    // タイムラインからテーブルを作る
+                    list($this->_mtable, $this->_mtl) = $this->_mGetTableByURL($url, 'Reply');
+                    if (!$this->_mtable) {
+                      $results[] = $this->_mtl;
+                      continue; // 次のリプライへ
+                    }
+                   
+                }
+ $status .= "ぷちぷち";
